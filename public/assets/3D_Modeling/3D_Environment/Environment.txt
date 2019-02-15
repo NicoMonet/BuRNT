@@ -1,0 +1,9 @@
+﻿Environments:
+•	Arctic
+	- Arctic floor
+	- Igloo
+
+•	Forest
+	- forest ground
+	- Tree [01, 02, 03]
+	- Rock [01, 02]

@@ -1,0 +1,16 @@
+01-delete-old1 (name: Menu Sounds for CPU » Shard.wav)
+https://freesound.org/people/Ultranova105/sounds/136754/#
+- Ultranova105
+- This work is licensed under the Attribution License. >> https://creativecommons.org/licenses/by/3.0/
+
+vendingmachine-old1 (name: vendingmachine)
+https://freesound.org/people/Emma7073/sounds/250195/
+- Emma7073
+- This work is licensed under the Creative Commons 0 License.
+>> https://creativecommons.org/publicdomain/zero/1.0/
+
+sound5 (name: Sound5.mp3)
+https://freesound.org/people/Kastenfrosch/sounds/162471/
+- Kastenfrosch
+- This work is licensed under the Creative Commons 0 License.
+>> https://creativecommons.org/publicdomain/zero/1.0/

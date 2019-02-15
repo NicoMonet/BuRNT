@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Animals and where to find them</title> <!-- name of the browser tab-->
+        <meta name="description" content="BuRNT - Animals and where to find them">
+        <script src="/js/aframe.min.js"></script>
+        <script src="/js/spherical-env-map.js"></script>
+
+        <!-- lets load in our components -->
+        <script src="/js/create-cocacola-component.js"></script>
+        <script src="/js/remove-component.js"></script>
+    </head>
+    
+    <body>
+        <!-- main scene and we added shadows .. -->
+        <a-scene shadow="type:basic;">
+                <a-assets timeout="3000">
+
+                <!-- all assets that can be cached by browser -->
+
+                <!-- Images / Textures -->
+                    <img crossorigin="anonymous" id="skymap" src="/assets/textures/CloudySky.jpg">
+                    
+                    <img crossorigin="anonymous" id="forestGroundTexture" src="/assets/3D_Modeling/Textures/Forent_environment_texture.png">
+                    
+                    <img crossorigin="anonymous" id="tree01" src="/assets/3D_Modeling/Textures/Tree_01_Texture.png">
+                    <img crossorigin="anonymous" id="tree02" src="/assets/3D_Modeling/Textures/Tree_02_Texture.png">
+                    <img crossorigin="anonymous" id="tree03" src="/assets/3D_Modeling/Textures/Tree_03_Texture.png">
+
+                    <img crossorigin="anonymous" id="Rock01" src="/assets/3D_Modeling/Textures/Rock_Texture.png">
+                    <img crossorigin="anonymous" id="Rock02" src="/assets/3D_Modeling/Textures/Rock_Texture.png">
+
+                    <!-- <img crossorigin="anonymous" id="Animal" src="/assets/3D_Modeling/Textures/Animal_Texture.png"> -->
+
+                    <!-- <img crossorigin="anonymous" id="textureMap1" src="/assets/textures/textureNAME1.png"> -->
+                    <!-- <img crossorigin="anonymous" id="textureMap2" src="/assets/textures/textureNAME2.jpg"> -->
+
+                <!-- Objects -->
+                    <a-asset-item crossorigin="anonymous" id="forestEnv-obj" src="/assets/3D_Modeling/3D_Environment/Forest_ground.obj">
+                    
+                    <a-asset-item crossorigin="anonymous" id="tree01-obj" src="/assets/3D_Modeling/3D_Environment/Tree_01.obj">
+                    <a-asset-item crossorigin="anonymous" id="tree02-obj" src="/assets/3D_Modeling/3D_Environment/Tree_02.obj">
+                    <a-asset-item crossorigin="anonymous" id="tree03-obj" src="/assets/3D_Modeling/3D_Environment/Tree_03.obj">
+                    
+                    <a-asset-item crossorigin="anonymous" id="rock01-obj" src="/assets/3D_Modeling/3D_Environment/Rock_01.obj">
+                    <a-asset-item crossorigin="anonymous" id="rock02-obj" src="/assets/3D_Modeling/3D_Environment/Rock_02.obj">
+                    
+                    <!-- model from:  -->
+                    <!-- <a-asset-item crossorigin="anonymous" id="name1-obj" src="/assets/models/name1.obj"> -->
+                    <!-- model from: -->
+                    <!-- <a-asset-item crossorigin="anonymous" id="name2-obj" src="/assets/models/name2.obj"> -->
+
+                <!-- Animals -->
+                    <a-asset-item crossorigin="anonymous" id="frog-obj" src="/assets/3D_Modeling/3D_Environment/frog.obj">
+
+
+                <!-- Sounds -->
+                    <!-- one -->
+                    <!-- <a-asset-item crossorigin="anonymous" id="soundID1" src="/assets/sound/soundName1.wav" response-type="arraybuffer"></a-asset-item> -->
+                    <!-- two -->
+                    <!-- <a-asset-item crossorigin="anonymous" id="soundID2" src="/assets/sound/soundName2.wav" response-type="arraybuffer"></a-asset-item> -->
+
+                </a-assets>
+
+                <!-- Text -->
+                    <a-text value="Welcome to the forest!" position="1 2 -5" color="#000" scale="1.5 1.5 1.5"></a-text>
+                    <a-text value="Discover all the animals." position="1 1.5 -5" color="#2b2b2b"></a-text>
+                
+                <!-- Create camera -->
+                <a-entity position="0 2 0 " camera look-controls wasd-controls>
+                    <a-entity   cursor="fuse:true; fuseTimeout:500;"
+                                position="0 0 -1"
+                                geometry="primitive:ring; radiusInner:0.012; radiusOuter:0.02;"
+                                material="shader:flat; color:black;" >
+                    </a-entity>
+                </a-entity>
+                
+                <!-- sound -->
+                <!-- <a-entity id="soundIDname_1" sound="src:#soundID1"></a-entity> -->
+                <!-- <a-entity id="soundIDname_2" sound="src:#soundID2"></a-entity> -->
+            
+                <!-- default lighting added in manually -->
+                <a-entity light="type:directional; castShadow:true; intensity:0.6; shadowBias:-0.000001; shadowMapWidth:1024; shadowMapHeight:1024;" position="-0.5 1 1"></a-entity>
+                <a-entity light="type: ambient; intensity: 1.0; color:#bbb;"></a-entity>
+            
+                <!-- CokeMachine model -->
+                <!-- <a-obj-model 
+                    create-Item-component 
+                    src="#name-obj"
+                    material="src:#textureMap"
+                    position="-4 0 -9" 
+                    scale="1 1 1" 
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model> -->
+
+                <a-obj-model
+                    src="#forestEnv-obj"
+                    material="src:#forestGroundTexture"
+                    position="0 -3 0"
+                    scale="0.09 0.09 0.09"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+
+                <!-- The next section will need a tree generator to save space and keep the code clean -->
+                <a-obj-model
+                    src="#tree01-obj"
+                    material="src:#tree01"
+                    position="0 -3 0"
+                    scale="0.04 0.04 0.04"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#tree01-obj"
+                    material="src:#tree01"
+                    position="-4 -3 -6"
+                    scale="0.02 0.02 0.02"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+                
+                <a-obj-model
+                    src="#tree01-obj"
+                    material="src:#tree01"
+                    position="-12 -3 -11"
+                    scale="0.04 0.04 0.04"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+                
+                <a-obj-model
+                    src="#tree01-obj"
+                    material="src:#tree01"
+                    position="-3 -3 -9"
+                    scale="0.04 0.04 0.04"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+
+                <a-obj-model
+                    src="#tree02-obj"
+                    material="src:#tree01"
+                    position="5 -3 7"
+                    scale="0.009 0.009 0.009"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#tree02-obj"
+                    material="src:#tree01"
+                    position="-2 -3 -3"
+                    scale="0.01 0.01 0.01"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+                
+                <a-obj-model
+                    src="#tree02-obj"
+                    material="src:#tree01"
+                    position="-14 -3 -12"
+                    scale="0.02 0.02 0.02"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+                
+                <a-obj-model
+                    src="#tree02-obj"
+                    material="src:#tree01"
+                    position="-8 -3 -1"
+                    scale="0.02 0.02 0.02"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+                
+                <!-- manual method of creating "sky sphere" -->
+                <a-entity 
+                    id="sky"
+                    geometry="primitive:sphere; radius:500;"
+                    material="shader:flat; src:#skymap; side:back; height:2048; width:2048">
+                </a-entity>
+        </a-scene>
+    </body>
+</html>
