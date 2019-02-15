@@ -7,7 +7,7 @@
         <script src="/js/spherical-env-map.js"></script>
 
         <!-- lets load in our components -->
-        <script src="/js/create-cocacola-component.js"></script>
+        <script src="/js/create-obj-component.js"></script>
         <script src="/js/remove-component.js"></script>
     </head>
     
@@ -19,7 +19,7 @@
                 <!-- all assets that can be cached by browser -->
 
                 <!-- Images / Textures -->
-                    <img crossorigin="anonymous" id="skymap" src="/assets/textures/CloudySky.jpg">
+                    <img crossorigin="anonymous" id="skymap" src="/assets/skyTexture/CloudySky.jpg">
                     
                     <img crossorigin="anonymous" id="forestGroundTexture" src="/assets/3D_Modeling/Textures/Forent_environment_texture.png">
                     
@@ -29,6 +29,8 @@
 
                     <img crossorigin="anonymous" id="Rock01" src="/assets/3D_Modeling/Textures/Rock_Texture.png">
                     <img crossorigin="anonymous" id="Rock02" src="/assets/3D_Modeling/Textures/Rock_Texture.png">
+
+                    <!-- <img crossorigin="anonymous" id="Frog01" src="/assets/3D_Modeling/Textures/Frog_Texture.png"> -->
 
                     <!-- <img crossorigin="anonymous" id="Animal" src="/assets/3D_Modeling/Textures/Animal_Texture.png"> -->
 
@@ -50,8 +52,8 @@
                     <!-- model from: -->
                     <!-- <a-asset-item crossorigin="anonymous" id="name2-obj" src="/assets/models/name2.obj"> -->
 
-                <!-- Animals -->
-                    <a-asset-item crossorigin="anonymous" id="frog-obj" src="/assets/3D_Modeling/3D_Environment/frog.obj">
+                <!-- Animals - Objects -->
+                    <a-asset-item crossorigin="anonymous" id="frog-obj" src="/assets/3D_Modeling/3D_Animals/frog.obj">
 
 
                 <!-- Sounds -->
@@ -105,6 +107,9 @@
 
 
                 <!-- The next section will need a tree generator to save space and keep the code clean -->
+                <!-- ================================================================================= -->
+                <!--                                      Trees                                        -->
+                <!-- ================================================================================= -->
                 <a-obj-model
                     src="#tree01-obj"
                     material="src:#tree01"
@@ -141,7 +146,6 @@
                     spherical-env-map="src:#skymap;">
                 </a-obj-model>
 
-
                 <a-obj-model
                     src="#tree02-obj"
                     material="src:#tree01"
@@ -154,8 +158,8 @@
                 <a-obj-model
                     src="#tree02-obj"
                     material="src:#tree01"
-                    position="-2 -3 -3"
-                    scale="0.01 0.01 0.01"
+                    position="-2 -3 5"
+                    scale="0.015 0.015 0.015"
                     shadow="cast:true; receive:true;"
                     spherical-env-map="src:#skymap;">
                 </a-obj-model>
@@ -177,11 +181,93 @@
                     shadow="cast:true; receive:true;"
                     spherical-env-map="src:#skymap;">
                 </a-obj-model>
+
+                <a-obj-model
+                    src="#tree03-obj"
+                    material="src:#tree03"
+                    position="7 -3 0"
+                    scale="0.02 0.02 0.02"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#tree03-obj"
+                    material="src:#tree03"
+                    position="7 -3 -10"
+                    scale="0.02 0.02 0.02"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#tree03-obj"
+                    material="src:#tree03"
+                    position="-11 -3 -3"
+                    scale="0.02 0.02 0.02"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>                
+
+                <!-- The next section will need a rock generator to save space and keep the code clean -->
+                <!-- ================================================================================= -->
+                <!--                                      Rocks                                        -->
+                <!-- ================================================================================= -->
+                <a-obj-model
+                    src="#rock01-obj"
+                    material="src:#Rock01"
+                    position="3 -3 0"
+                    scale="1 1 1"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#rock02-obj"
+                    material="src:#Rock02"
+                    position="4 -3 -11"
+                    scale="1 1 1"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#rock02-obj"
+                    material="src:#Rock02"
+                    position="-8 -3 -4"
+                    scale="1 1 1"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>                
+
+                <!-- ================================================================================= -->
+                <!--                                    Animals                                        -->
+                <!-- ================================================================================= -->
                 
+                <!-- <a-obj-model
+                    src="#frog-obj"
+                    material="src:#Frog01"
+                    position="4 -2 -11"
+                    rotation="0 90 0"
+                    scale="0.02 0.02 0.02"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model> -->
+
+
+                <a-obj-model
+                    src="#frog-obj"
+                    position="-3 1 -9.65"
+                    rotation="90 180 0"
+                    scale="0.02 0.02 0.02"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
                 <!-- manual method of creating "sky sphere" -->
                 <a-entity 
                     id="sky"
-                    geometry="primitive:sphere; radius:500;"
+                    geometry="primitive:sphere; radius:800;"
                     material="shader:flat; src:#skymap; side:back; height:2048; width:2048">
                 </a-entity>
         </a-scene>
