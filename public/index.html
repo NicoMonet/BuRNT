@@ -9,6 +9,7 @@
         <!-- lets load in our components -->
         <script src="/js/create-obj-component.js"></script>
         <script src="/js/remove-component.js"></script>
+        <script src="/js/tree_generator.js"></script>  
     </head>
     
     <body>
@@ -49,8 +50,6 @@
                     
                     <!-- model from:  -->
                     <!-- <a-asset-item crossorigin="anonymous" id="name1-obj" src="/assets/models/name1.obj"> -->
-                    <!-- model from: -->
-                    <!-- <a-asset-item crossorigin="anonymous" id="name2-obj" src="/assets/models/name2.obj"> -->
 
                 <!-- Animals - Objects -->
                     <a-asset-item crossorigin="anonymous" id="frog-obj" src="/assets/3D_Modeling/3D_Animals/frog.obj">
@@ -65,13 +64,17 @@
                 </a-assets>
 
                 <!-- Text -->
+                <a-entity id="F_text">
                     <a-text value="Welcome to the forest!" position="1 2 -5" color="#000" scale="1.5 1.5 1.5"></a-text>
                     <a-text value="Discover all the animals." position="1 1.5 -5" color="#2b2b2b"></a-text>
-                
+                    <!-- create a fade for the text ... use animate -->
+                </a-entity>
                 <!-- Create camera -->
-                <a-entity position="0 2 0 " camera look-controls wasd-controls>
+                <a-entity id="player" 
+                    position="2 2 0 "
+                    camera look-controls wasd-controls>
                     <a-entity   cursor="fuse:true; fuseTimeout:500;"
-                                position="0 0 -1"
+                                position="0 0 -1.5"
                                 geometry="primitive:ring; radiusInner:0.012; radiusOuter:0.02;"
                                 material="shader:flat; color:black;" >
                     </a-entity>
