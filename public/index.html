@@ -31,6 +31,27 @@
                     <img crossorigin="anonymous" id="Rock01" src="/assets/3D_Modeling/Textures/Rock_Texture.png">
                     <img crossorigin="anonymous" id="Rock02" src="/assets/3D_Modeling/Textures/Rock_Texture.png">
 
+                    <img crossorigin="anonymous" id="Branch1_T" src="/assets/3D_Modeling/Textures/Branch1.mtl">
+                    <img crossorigin="anonymous" id="Branch2_T" src="/assets/3D_Modeling/Textures/Branch2.mtl">
+
+                    <img crossorigin="anonymous" id="bush_T" src="/assets/3D_Modeling/Textures/bush.mtl">
+                    
+                    <img crossorigin="anonymous" id="fox_T" src="/assets/3D_Modeling/Textures/fox.mtl">
+                    <img crossorigin="anonymous" id="frog_T" src="/assets/3D_Modeling/Textures/frog_model.mtl">
+                    <img crossorigin="anonymous" id="fish_T" src="/assets/3D_Modeling/Textures/fish_model.mtl">
+
+                    <img crossorigin="anonymous" id="Arctic_environment_texture" src="/assets/3D_Modeling/Textures/Arctic_environment_texture.png">
+                    
+                    <img crossorigin="anonymous" id="iceberg" src="/assets/3D_Modeling/Textures/iceberg.mtl">
+                    <img crossorigin="anonymous" id="Igloo_T" src="/assets/3D_Modeling/Textures/Igloo_Texture.mtl">
+
+                    <img crossorigin="anonymous" id="snowman_T" src="/assets/3D_Modeling/Textures/snowman.mtl">
+                    <img crossorigin="anonymous" id="carrot_T" src="/assets/3D_Modeling/Textures/Carrot.mtl">
+                    <img crossorigin="anonymous" id="ArcticHare_T" src="/assets/3D_Modeling/Textures/Arctic_Hare_Texture.mtl">
+                    <img crossorigin="anonymous" id="Penguin_T" src="/assets/3D_Modeling/Textures/Penguin_Texture.mtl">
+                    <img crossorigin="anonymous" id="seal_T" src="/assets/3D_Modeling/Textures/seal.mtl">
+                    
+
                     <!-- <img crossorigin="anonymous" id="Frog01" src="/assets/3D_Modeling/Textures/Frog_Texture.png"> -->
 
                     <!-- <img crossorigin="anonymous" id="Animal" src="/assets/3D_Modeling/Textures/Animal_Texture.png"> -->
@@ -44,15 +65,30 @@
                     <a-asset-item crossorigin="anonymous" id="tree01-obj" src="/assets/3D_Modeling/3D_Environment/Tree_01.obj">
                     <a-asset-item crossorigin="anonymous" id="tree02-obj" src="/assets/3D_Modeling/3D_Environment/Tree_02.obj">
                     <a-asset-item crossorigin="anonymous" id="tree03-obj" src="/assets/3D_Modeling/3D_Environment/Tree_03.obj">
-                    
                     <a-asset-item crossorigin="anonymous" id="rock01-obj" src="/assets/3D_Modeling/3D_Environment/Rock_01.obj">
                     <a-asset-item crossorigin="anonymous" id="rock02-obj" src="/assets/3D_Modeling/3D_Environment/Rock_02.obj">
+                    <a-asset-item crossorigin="anonymous" id="Branch01-obj" src="/assets/3D_Modeling/3D_Environment/Branch1.obj">
+                    <a-asset-item crossorigin="anonymous" id="Branch02-obj" src="/assets/3D_Modeling/3D_Environment/Branch2.obj">
+                    <a-asset-item crossorigin="anonymous" id="bush-obj" src="/assets/3D_Modeling/3D_Environment/bush.obj">
+
+                    <a-asset-item crossorigin="anonymous" id="ArcticEnv-obj" src="/assets/3D_Modeling/3D_Environment/Arctic_floor.obj">
+                    <a-asset-item crossorigin="anonymous" id="iceberg-obj" src="/assets/3D_Modeling/3D_Environment/iceberg.obj">
+                    <a-asset-item crossorigin="anonymous" id="Igloo-obj" src="/assets/3D_Modeling/3D_Environment/Igloo.obj">
+                    <a-asset-item crossorigin="anonymous" id="Carrot-obj" src="/assets/3D_Modeling/3D_Environment/Carrot.obj">
                     
                     <!-- model from:  -->
                     <!-- <a-asset-item crossorigin="anonymous" id="name1-obj" src="/assets/models/name1.obj"> -->
 
                 <!-- Animals - Objects -->
                     <a-asset-item crossorigin="anonymous" id="frog-obj" src="/assets/3D_Modeling/3D_Animals/frog.obj">
+                    <a-asset-item crossorigin="anonymous" id="fox-obj" src="/assets/3D_Modeling/3D_Animals/fox.obj">
+                    <a-asset-item crossorigin="anonymous" id="fish-obj" src="/assets/3D_Modeling/3D_Animals/fish_model.obj">
+
+                    <a-asset-item crossorigin="anonymous" id="Arctic_Hare-obj" src="/assets/3D_Modeling/3D_Animals/Arctic_Hare.obj">
+                    <a-asset-item crossorigin="anonymous" id="Penguin-obj" src="/assets/3D_Modeling/3D_Animals/Penguin.obj">
+                    <a-asset-item crossorigin="anonymous" id="seal-obj" src="/assets/3D_Modeling/3D_Animals/seal.obj">
+
+                    <a-asset-item crossorigin="anonymous" id="snowman-obj" src="/assets/3D_Modeling/3D_Animals/snowman.obj">
 
 
                 <!-- Sounds -->
@@ -65,8 +101,8 @@
 
                 <!-- Text -->
                 <a-entity id="F_text">
-                    <a-text value="Welcome to the forest!" position="1 2 -5" color="#000" scale="1.5 1.5 1.5"></a-text>
-                    <a-text value="Discover all the animals." position="1 1.5 -5" color="#2b2b2b"></a-text>
+                    <a-text value="Welcome to the forest!" position="2 2 -5" color="#000" scale="1.5 1.5 1.5"></a-text>
+                    <a-text value="Discover all the animals." position="2 1.5 -5" color="#2b2b2b"></a-text>
                     <!-- create a fade for the text ... use animate -->
                 </a-entity>
                 <!-- Create camera -->
@@ -108,11 +144,9 @@
                     spherical-env-map="src:#skymap;">
                 </a-obj-model>
 
-
-                <!-- The next section will need a tree generator to save space and keep the code clean -->
-                <!-- ================================================================================= -->
-                <!--                                      Trees                                        -->
-                <!-- ================================================================================= -->
+            <!-- ================================================================================= -->
+            <!--                                      Trees                                        -->
+            <!-- ================================================================================= -->
                 <a-obj-model
                     src="#tree01-obj"
                     material="src:#tree01"
@@ -148,7 +182,46 @@
                     shadow="cast:true; receive:true;"
                     spherical-env-map="src:#skymap;">
                 </a-obj-model>
+                
+                <a-obj-model
+                    src="#tree01-obj"
+                    material="src:#tree01"
+                    position="-3 -3 -9"
+                    scale="0.04 0.04 0.04"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
 
+                <a-obj-model
+                    src="#tree01-obj"
+                    material="src:#tree01"
+                    position="-30 -3 -9"
+                    scale="0.04 0.04 0.04"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#tree01-obj"
+                    material="src:#tree01"
+                    position="-28 -3 9"
+                    rotation="0 90 0"
+                    scale="0.02 0.02 0.02"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#tree01-obj"
+                    material="src:#tree01"
+                    position="-22 -3 29"
+                    rotation="0 90 0"
+                    scale="0.04 0.04 0.04"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model> 
+                
+                <!-- ========================================== -->
                 <a-obj-model
                     src="#tree02-obj"
                     material="src:#tree01"
@@ -186,6 +259,142 @@
                 </a-obj-model>
 
                 <a-obj-model
+                    src="#tree02-obj"
+                    material="src:#tree01"
+                    position="25 -3 27"
+                    scale="0.009 0.009 0.009"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#tree02-obj"
+                    material="src:#tree01"
+                    position="-34 -3 28"
+                    scale="0.009 0.009 0.009"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#tree02-obj"
+                    material="src:#tree01"
+                    position="-32 -3 23"
+                    scale="0.015 0.015 0.015"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+                
+                <a-obj-model
+                    src="#tree02-obj"
+                    material="src:#tree01"
+                    position="-24 -3 18"
+                    rotation="0 90 0"
+                    scale="0.009 0.009 0.009"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#tree02-obj"
+                    material="src:#tree01"
+                    position="-24 -3 10"
+                    rotation="0 90 0"
+                    scale="0.009 0.009 0.009"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#tree02-obj"
+                    material="src:#tree01"
+                    position="-34 -3 10"
+                    rotation="0 90 0"
+                    scale="0.02 0.02 0.02"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#tree02-obj"
+                    material="src:#tree01"
+                    position="-22 -3 15"
+                    rotation="0 270 0"
+                    scale="0.015 0.015 0.015"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#tree02-obj"
+                    material="src:#tree01"
+                    position="-34 -3 18"
+                    rotation="0 90 0"
+                    scale="0.009 0.009 0.009"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#tree02-obj"
+                    material="src:#tree01"
+                    position="-32 -3 15"
+                    rotation="0 180 0"
+                    scale="0.015 0.015 0.015"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+                
+                <a-obj-model
+                    src="#tree02-obj"
+                    material="src:#tree01"
+                    position="-34 -3 -32"
+                    scale="0.02 0.02 0.02"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+                
+                <a-obj-model
+                    src="#tree02-obj"
+                    material="src:#tree01"
+                    position="-28 -3 -21"
+                    scale="0.02 0.02 0.02"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#tree02-obj"
+                    material="src:#tree01"
+                    position="20 -3 -32"
+                    rotation="0 180 0"
+                    scale="0.02 0.02 0.02"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#tree02-obj"
+                    material="src:#tree01"
+                    position="0 -3 -32"
+                    rotation="0 45 0"
+                    scale="0.02 0.02 0.02"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+                
+                <a-obj-model
+                    src="#tree02-obj"
+                    material="src:#tree01"
+                    position="10 -3 -31"
+                    rotation="0 90 0"
+                    scale="0.015 0.015 0.015"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <!-- ========================================== -->
+                <a-obj-model
                     src="#tree03-obj"
                     material="src:#tree03"
                     position="7 -3 0"
@@ -210,25 +419,195 @@
                     scale="0.02 0.02 0.02"
                     shadow="cast:true; receive:true;"
                     spherical-env-map="src:#skymap;">
-                </a-obj-model>                
+                </a-obj-model>
 
-                <!-- The next section will need a rock generator to save space and keep the code clean -->
-                <!-- ================================================================================= -->
-                <!--                                      Rocks                                        -->
-                <!-- ================================================================================= -->
+                <a-obj-model
+                    src="#tree03-obj"
+                    material="src:#tree03"
+                    position="27 -3 20"
+                    scale="0.02 0.02 0.02"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+                
+                <a-obj-model
+                    src="#tree03-obj"
+                    material="src:#tree03"
+                    position="30 -2.5 -15"
+                    scale="0.015 0.015 0.015"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#tree03-obj"
+                    material="src:#tree03"
+                    position="27 -3 -10"
+                    scale="0.02 0.02 0.02"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#tree03-obj"
+                    material="src:#tree03"
+                    position="28 -3 4"
+                    scale="0.01 0.01 0.01"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#tree03-obj"
+                    material="src:#tree03"
+                    position="-31 -3 -23"
+                    scale="0.02 0.02 0.02"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#tree03-obj"
+                    material="src:#tree03"
+                    position="10 -3 -35"
+                    scale="0.015 0.015 0.015"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#tree03-obj"
+                    material="src:#tree03"
+                    position="15 -3 -37"
+                    scale="0.015 0.015 0.015"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+                
+                <a-obj-model
+                    src="#tree03-obj"
+                    material="src:#tree03"
+                    position="-12 -3 -29"
+                    scale="0.01 0.01 0.01"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#tree03-obj"
+                    material="src:#tree03"
+                    position="-32 -3 -29"
+                    scale="0.015 0.015 0.015"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#tree03-obj"
+                    material="src:#tree03"
+                    position="-37 -3 -14"
+                    scale="0.015 0.015 0.015"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#tree03-obj"
+                    material="src:#tree03"
+                    position="-37 -3 14"
+                    scale="0.015 0.015 0.015"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#tree03-obj"
+                    material="src:#tree03"
+                    position="-38 -3 5"
+                    scale="0.01 0.01 0.01"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+            <!-- ================================================================================= -->
+            <!--                                      Rocks                                        -->
+            <!-- ================================================================================= -->
                 <a-obj-model
                     src="#rock01-obj"
                     material="src:#Rock01"
                     position="3 -3 0"
+                    rotation="0 0 0"
                     scale="1 1 1"
                     shadow="cast:true; receive:true;"
                     spherical-env-map="src:#skymap;">
                 </a-obj-model>
 
                 <a-obj-model
+                    src="#rock01-obj"
+                    material="src:#Rock01"
+                    position="-7 -3 -22"
+                    rotation="0 0 0"
+                    scale="1 1 1"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#rock01-obj"
+                    material="src:#Rock01"
+                    position="-7 -3 -22"
+                    rotation="0 0 0"
+                    scale="1 1 1"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#rock01-obj"
+                    material="src:#Rock01"
+                    position="-7 -3 -10"
+                    rotation="0 0 0"
+                    scale="0.8 1 0.8"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#rock01-obj"
+                    material="src:#Rock01"
+                    position="-11 -3 8"
+                    rotation="0 0 0"
+                    scale="0.8 1 0.8"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#rock01-obj"
+                    material="src:#Rock01"
+                    position="-21 -3 8"
+                    rotation="0 0 0"
+                    scale="1 1 1"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#rock01-obj"
+                    material="src:#Rock01"
+                    position="5 -3 10"
+                    rotation="0 0 0"
+                    scale="2 2 2"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <!-- ========================================== -->
+                <a-obj-model
                     src="#rock02-obj"
                     material="src:#Rock02"
                     position="4 -3 -11"
+                    rotation="0 0 0"
                     scale="1 1 1"
                     shadow="cast:true; receive:true;"
                     spherical-env-map="src:#skymap;">
@@ -238,14 +617,250 @@
                     src="#rock02-obj"
                     material="src:#Rock02"
                     position="-8 -3 -4"
+                    rotation="0 0 0"
                     scale="1 1 1"
                     shadow="cast:true; receive:true;"
                     spherical-env-map="src:#skymap;">
-                </a-obj-model>                
+                </a-obj-model>
 
-                <!-- ================================================================================= -->
-                <!--                                    Animals                                        -->
-                <!-- ================================================================================= -->
+                <a-obj-model
+                    src="#rock02-obj"
+                    material="src:#Rock02"
+                    position="14 -3 -11"
+                    rotation="0 0 0"
+                    scale="1 1 1"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#rock02-obj"
+                    material="src:#Rock02"
+                    position="-18 -3 -4"
+                    rotation="0 180 0"
+                    scale="1 1 1"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#rock02-obj"
+                    material="src:#Rock02"
+                    position="14 -3 -31"
+                    rotation="0 0 0"
+                    scale="1 1 1"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#rock02-obj"
+                    material="src:#Rock02"
+                    position="-18 -3 -10"
+                    rotation="0 180 0"
+                    scale="1.5 2 1.5"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#rock02-obj"
+                    material="src:#Rock02"
+                    position="-24 -3 5"
+                    rotation="0 180 0"
+                    scale="3 2 3"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#rock02-obj"
+                    material="src:#Rock02"
+                    position="-24 -3 0"
+                    rotation="0 90 0"
+                    scale="1 1 1"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#rock02-obj"
+                    material="src:#Rock02"
+                    position="-18 -3 6"
+                    rotation="0 0 0"
+                    scale="2 1 1.5"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#rock02-obj"
+                    material="src:#Rock02"
+                    position="-10 -3 -19"
+                    rotation="0 0 0"
+                    scale="2.5 1 3"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+            <!-- ================================================================================= -->
+            <!--                                      Branch                                         -->
+            <!-- ================================================================================= -->
+                <a-obj-model
+                    src="#Branch01-obj"
+                    material="src:#Branch1_T"
+                    position="1 -3 5"
+                    rotation="0 45 0"
+                    scale="0.07 0.07 0.07"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+                
+                <a-obj-model
+                    src="#Branch01-obj"
+                    material="src:#Branch1_T"
+                    position="10 -3 5"
+                    rotation="0 0 0"
+                    scale="0.1 0.1 0.1"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <!-- ========================================== -->
+                <a-obj-model
+                    src="#Branch02-obj"
+                    material="src:#Branch2_T"
+                    position="0 -3 -8"
+                    rotation="0 180 0"
+                    scale="0.05 0.05 0.05"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#Branch02-obj"
+                    material="src:#Branch2_T"
+                    position="2 -3 -2"
+                    rotation="0 45 0"
+                    scale="0.05 0.05 0.05"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+            <!-- ================================================================================= -->
+            <!--                                      Bush                                         -->
+            <!-- ================================================================================= -->
+                <a-obj-model
+                    src="#bush-obj"
+                    material="src:#bush_T"
+                    position="12 -3 0"
+                    scale="0.1 0.1 0.1"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#bush-obj"
+                    material="src:#bush_T"
+                    position="10.5 -3 -4"
+                    scale="0.08 0.08 0.08"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#bush-obj"
+                    material="src:#bush_T"
+                    position="-36 -3 8"
+                    scale="0.12 0.12 0.12"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#bush-obj"
+                    material="src:#bush_T"
+                    position="-42 -3 6"
+                    scale="0.1 0.1 0.1"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#bush-obj"
+                    material="src:#bush_T"
+                    position="-28 -3 -16"
+                    scale="0.1 0.1 0.1"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+                
+                <a-obj-model
+                    src="#bush-obj"
+                    material="src:#bush_T"
+                    position="-35 -3 -17"
+                    scale="0.12 0.12 0.12"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#bush-obj"
+                    material="src:#bush_T"
+                    position="-31 -3 -18"
+                    scale="0.08 0.08 0.08"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#bush-obj"
+                    material="src:#bush_T"
+                    position="-33 -3 -14"
+                    scale="0.08 0.08 0.08"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#bush-obj"
+                    material="src:#bush_T"
+                    position="0 -3 -36"
+                    scale="0.1 0.1 0.1"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+                
+                <a-obj-model
+                    src="#bush-obj"
+                    material="src:#bush_T"
+                    position="7 -3 -37"
+                    scale="0.12 0.12 0.12"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#bush-obj"
+                    material="src:#bush_T"
+                    position="3 -3 -38"
+                    scale="0.08 0.08 0.08"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#bush-obj"
+                    material="src:#bush_T"
+                    position="5 -3 -34"
+                    scale="0.08 0.08 0.08"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>  
+
+            <!-- ================================================================================= -->
+            <!--                                    Animals                                        -->
+            <!-- ================================================================================= -->
                 
                 <!-- <a-obj-model
                     src="#frog-obj"
@@ -256,18 +871,114 @@
                     shadow="cast:true; receive:true;"
                     spherical-env-map="src:#skymap;">
                 </a-obj-model> -->
-
-
+                
+                <!-- ========================================== -->
+                <!-- Frog -->
                 <a-obj-model
                     src="#frog-obj"
+                    material="src:#frog_T"
                     position="-3 1 -9.65"
                     rotation="90 180 0"
                     scale="0.02 0.02 0.02"
                     shadow="cast:true; receive:true;"
                     spherical-env-map="src:#skymap;">
                 </a-obj-model>
+                
+                <!-- ========================================== -->
+                <!-- Fox -->
+                <a-obj-model
+                    src="#fox-obj"
+                    material="src:#fox_T"
+                    position="-40 -3 8"
+                    rotation="0 0 0"
+                    scale="0.2 0.2 0.2"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+                
+                <!-- ========================================== -->
+                <!-- Fish -->
+                <a-obj-model
+                    src="#fish-obj"
+                    material="src:#fish_T"
+                    position="45 -3 20"
+                    rotation="45 180 0"
+                    scale="0.02 0.02 0.02"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
 
-                <!-- manual method of creating "sky sphere" -->
+                <a-obj-model
+                    src="#fish-obj"
+                    material="src:#fish_T"
+                    position="42 -3.5 21"
+                    rotation="41 180 0"
+                    scale="0.02 0.02 0.02"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#fish-obj"
+                    material="src:#fish_T"
+                    position="42 -4.65 24"
+                    rotation="0 180 0"
+                    scale="0.02 0.02 0.02"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#fish-obj"
+                    material="src:#fish_T"
+                    position="42.5 -4.65 24.5"
+                    rotation="0 180 0"
+                    scale="0.02 0.02 0.02"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#fish-obj"
+                    material="src:#fish_T"
+                    position="41.5 -4.65 24.5"
+                    rotation="0 180 0"
+                    scale="0.02 0.02 0.02"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+                
+                <a-obj-model
+                    src="#fish-obj"
+                    material="src:#fish_T"
+                    position="42 -4.65 25.5"
+                    rotation="0 180 0"
+                    scale="0.02 0.02 0.02"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#fish-obj"
+                    material="src:#fish_T"
+                    position="29.5 -4.65 42"
+                    rotation="0 270 0"
+                    scale="0.02 0.02 0.02"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>
+
+                <a-obj-model
+                    src="#fish-obj"
+                    material="src:#fish_T"
+                    position="29 -4.65 42.5"
+                    rotation="0 270 0"
+                    scale="0.02 0.02 0.02"
+                    shadow="cast:true; receive:true;"
+                    spherical-env-map="src:#skymap;">
+                </a-obj-model>                
+
+            <!-- manual method of creating "sky sphere" -->
                 <a-entity 
                     id="sky"
                     geometry="primitive:sphere; radius:800;"
