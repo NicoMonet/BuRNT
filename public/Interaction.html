@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="/js/aframe.min.js"></script>
+        <script src="/js/spherical-env-map.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        
+
+    </head>
+
+    <a-scene>
+        <a-asset-item id='penguin' src='/assets/3D_Modeling/3D_Animals/penguin.obj'></a-asset-item>
+        <img id='Ptexture' src='assets/3D_Modeling/textures/penguin_texture.png'>
+        <a-asset-item id='fox' src='/assets/3D_Modeling/3D_Animals/fox.obj'></a-asset-item>
+        <img id='Ftexture' src='assets/3D_Modeling/textures/fox.mtl'>
+
+        <a-entity id="playerCam" position="0 2 0 " camera look-controls wasd-controls>
+            <a-entity   cursor="fuse:true; fuseTimeout:500; rayOrigin: mouse;"></a-entity>
+        </a-entity>
+
+        <a-entity id="penguin1" position="1 0 1" obj-model="obj: #penguin" scale="0.5 0.5 0.5" material="src:#Ptexture"></a-entity>
+        <a-entity id="fox1" position="5 0 5" obj-model="obj: #fox" scale="0.1 0.1 0.1" material="src:#Ftexture"></a-entity>
+
+        <script src="/js/AnimalInteraction.js"></script>
+
+    </a-scene>
+    <a-asset>
+
+
+
+
+</html>
