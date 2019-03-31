@@ -2,15 +2,15 @@ let socket = io();
 
 //reset array
 socket.emit('resetArray');
-//------------------------------------      PENGUIN POSITION        ----------------------------------------------------//
+//-------------------------------------      HARE POSITION        ------------------------------------------------------//
 //get the area around an animal in which the player can interact
 
 
-penguinPos = document.querySelector('#penguin1').getAttribute('position');
+harePos = document.querySelector('#hare1').getAttribute('position');
 //get the minimum and maxumum x positions for interaction
-PenguinX1 = penguinPos.x - 2;     PenguinX2 = penguinPos.x + 2;
+hareX1 = harePos.x - 2;     hareX2 = harePos.x + 2;
 //get the minimum and maxumum z positions for interaction
-PenguinZ1 = penguinPos.z - 2;     PenguinZ2 = penguinPos.z + 2;
+hareZ1 = harePos.z - 2;     hareZ2 = harePos.z + 2;
 //--------------------------------------      FOX POSITION        ------------------------------------------------------//
 //get the area around an animal in which the player can interact
 
@@ -19,6 +19,22 @@ foxPos = document.querySelector('#fox1').getAttribute('position');
 foxX1 = foxPos.x - 2;     foxX2 = foxPos.x + 2;
 //get the minimum and maxumum z positions for interaction
 foxZ1 = foxPos.z - 2;     foxZ2 = foxPos.z + 2;
+//-------------------------------------      FROG POSITION        -----------------------------------------------------//
+//get the area around an animal in which the player can interact
+
+frogPos = document.querySelector('#frog1').getAttribute('position');
+//get the minimum and maxumum x positions for interaction
+frogX1 = frogPos.x - 2;     frogX2 = frogPos.x + 2;
+//get the minimum and maxumum z positions for interaction
+frogZ1 = frogPos.z - 2;     frogZ2 = frogPos.z + 2;
+//-------------------------------------      FISH POSITION        -----------------------------------------------------//
+//get the area around an animal in which the player can interact
+
+fishPos = document.querySelector('#fish1').getAttribute('position');
+//get the minimum and maxumum x positions for interaction
+fishX1 = fishPos.x - 2;     fishX2 = fishPos.x + 2;
+//get the minimum and maxumum z positions for interaction
+fishZ1 = fishPos.z - 2;     fishZ2 = fishPos.z + 2;
 
 //----------------------------------        RECEIVE ANIMALS FOUND       ------------------------------------------------//
 var animalsFound = [false, false, false, false, false];
@@ -48,9 +64,9 @@ document.addEventListener('keyup', function(e){
         //get the players camera position to check if they are within the interaction area
         playerPos = document.querySelector('#playerCam').getAttribute('position');
 
-        //check if position matches for the penguin
-        if (playerPos.x >= PenguinX1 && playerPos.x <= PenguinX2){
-            if (playerPos.z >= PenguinZ1 && playerPos.z <= PenguinZ2){
+        //check if position matches for the Hare
+        if (playerPos.x >= hareX1 && playerPos.x <= hareX2){
+            if (playerPos.z >= hareZ1 && playerPos.z <= hareZ2){
                 console.log('sending information to the server');
                 animalsFound.splice(0, 1, true);
                 console.log("animalsFound", animalsFound);
@@ -64,6 +80,26 @@ document.addEventListener('keyup', function(e){
             if (playerPos.z >= foxZ1 && playerPos.z <= foxZ2){
                 console.log('sending information to the server');
                 animalsFound.splice(1, 1, true);
+                console.log("animalsFound", animalsFound);
+                socket.emit('newArray', animalsFound);
+            }
+        }
+
+        //check if position matches for the frog
+        if (playerPos.x >= frogX1 && playerPos.x <= frogX2){
+            if (playerPos.z >= frogZ1 && playerPos.z <= frogZ2){
+                console.log('sending information to the server');
+                animalsFound.splice(2, 1, true);
+                console.log("animalsFound", animalsFound);
+                socket.emit('newArray', animalsFound);
+            }
+        }
+
+        //check if position matches for the fish
+        if (playerPos.x >= fishX1 && playerPos.x <= fishX2){
+            if (playerPos.z >= fishZ1 && playerPos.z <= fishZ2){
+                console.log('sending information to the server');
+                animalsFound.splice(4, 1, true);
                 console.log("animalsFound", animalsFound);
                 socket.emit('newArray', animalsFound);
             }

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="/socket.io/socket.io.js"></script>
+        <style>
+            /* move the images of the arrows to the correct positions */
+            .translate1{
+                height:45;
+                width:43;
+                position:absolute;
+                top: 630px;
+                left: 261px;
+            }
+            .translate2{
+                height:45;
+                width:43;
+                position:absolute;
+                top: 630px;
+                left: 968px;
+            }
+            .book{
+                height:1280;
+                width:720;
+                position:absolute; top:0; left:0;
+            }
+        </style>
+        
+
+    </head>
+
+    <a-scene>
+        <div class='book'>
+            <img id='Page1_01'  scale='0.5 0.5 0.5' src='assets/logbook/page1hidden.jpg'>
+        </div>
+        
+
+        <div class='translate1'>
+            <img id='left' scale='1 1 1' src='assets/logbook/leftArrow.png'>
+        </div>
+        <div class='translate2'>
+            <img id='right' scale='1 1 1' src='assets/logbook/rightArrow.png'>
+        </div>
+        
+        
+
+    </a-scene>
+    <script>
+        let socket = io();
+        var pageCount = 1;
+        var previous;
+        var pages = [false, false, false, false, false];
+
+        //receive the animals that are found and update the pages in the book
+        socket.on('SendAnimalArray', function(animals) {
+            
+            for (var i = 0; i < animals.length; i++){
+                pages.shift();
+            }
+            for (var i = 0; i < animals.length; i++){
+                pages.push(animals[i]);
+            }
+
+            //update the page if the player is on it as the animals is found
+            if (pageCount == 1 && pages[0] == true){
+                document.querySelector('#Page1_01').setAttribute('src', 'assets/logbook/Page1Shown.jpg');
+            }
+            else if (pageCount == 2 && pages[1] == true){
+                document.querySelector('#Page1_01').setAttribute('src', 'assets/logbook/Page2Shown.jpg');
+            }
+            else if (pageCount == 3 && pages[2] == true){
+                document.querySelector('#Page1_01').setAttribute('src', 'assets/logbook/Page3Shown.jpg');
+            }
+            else if (pageCount == 4 && pages[3] == true){
+                document.querySelector('#Page1_01').setAttribute('src', 'assets/logbook/Page4Shown.jpg');
+            }
+            else if (pageCount == 5 && pages[4] == true){
+                document.querySelector('#Page1_01').setAttribute('src', 'assets/logbook/Page5Shown.jpg');
+            }
+
+        });
+
+
+        //check if the player is clicking on one of the arrows and change page count if they are
+        document.getElementById("left").addEventListener("click", function(){
+                console.log("left");
+                    if (pageCount >= 2){
+                        pageCount -= 1;
+                        console.log(pageCount);
+
+                        //change the page
+                        if (pageCount == 1){
+                            if (pages[0] == true){
+                                document.querySelector('#Page1_01').setAttribute('src', 'assets/logbook/Page1Shown.jpg');
+                            }
+                            else if (pages[0] == false){
+                                document.querySelector('#Page1_01').setAttribute('src', 'assets/logbook/Page1Hidden.jpg');
+                            }
+                        }
+                        else if (pageCount == 2){
+                            if (pages[1] == true){
+                                document.querySelector('#Page1_01').setAttribute('src', 'assets/logbook/Page2Shown.jpg');
+                            }
+                            else if (pages[1] == false){
+                                document.querySelector('#Page1_01').setAttribute('src', 'assets/logbook/Page2Hidden.jpg');
+                            }                        
+                        }
+                        else if (pageCount == 3){
+                            if (pages[2] == true){
+                                document.querySelector('#Page1_01').setAttribute('src', 'assets/logbook/Page3Shown.jpg');
+                            }
+                            else if (pages[2] == false){
+                                document.querySelector('#Page1_01').setAttribute('src', 'assets/logbook/Page3Hidden.jpg');
+                            }                       
+                        }
+                        else if (pageCount == 4){
+                            if (pages[3] == true){
+                                document.querySelector('#Page1_01').setAttribute('src', 'assets/logbook/Page4Shown.jpg');
+                            }
+                            else if (pages[3] == false){
+                                document.querySelector('#Page1_01').setAttribute('src', 'assets/logbook/Page4Hidden.jpg');
+                            }                        
+                        }
+                        else if (pageCount == 5){
+                            if (pages[4] == true){
+                                document.querySelector('#Page1_01').setAttribute('src', 'assets/logbook/Page5Shown.jpg');
+                            }
+                            else if (pages[4] == false){
+                                document.querySelector('#Page1_01').setAttribute('src', 'assets/logbook/Page5Hidden.jpg');
+                            }                        
+                        }
+                    }
+
+            });
+            document.getElementById("right").addEventListener("click", function(){
+                console.log("right");
+                    if (pageCount <= 4){
+                        pageCount += 1;
+                        console.log(pageCount);
+
+                       //change the page
+                       if (pageCount == 1){
+                            if (pages[0] == true){
+                                document.querySelector('#Page1_01').setAttribute('src', 'assets/logbook/Page1Shown.jpg');
+                            }
+                            else if (pages[0] == false){
+                                document.querySelector('#Page1_01').setAttribute('src', 'assets/logbook/Page1Hidden.jpg');
+                            }
+                        }
+                        else if (pageCount == 2){
+                            if (pages[1] == true){
+                                document.querySelector('#Page1_01').setAttribute('src', 'assets/logbook/Page2Shown.jpg');
+                            }
+                            else if (pages[1] == false){
+                                document.querySelector('#Page1_01').setAttribute('src', 'assets/logbook/Page2Hidden.jpg');
+                            }                        
+                        }
+                        else if (pageCount == 3){
+                            if (pages[2] == true){
+                                document.querySelector('#Page1_01').setAttribute('src', 'assets/logbook/Page3Shown.jpg');
+                            }
+                            else if (pages[2] == false){
+                                document.querySelector('#Page1_01').setAttribute('src', 'assets/logbook/Page3Hidden.jpg');
+                            }                       
+                        }
+                        else if (pageCount == 4){
+                            if (pages[3] == true){
+                                document.querySelector('#Page1_01').setAttribute('src', 'assets/logbook/Page4Shown.jpg');
+                            }
+                            else if (pages[3] == false){
+                                document.querySelector('#Page1_01').setAttribute('src', 'assets/logbook/Page4Hidden.jpg');
+                            }                        
+                        }
+                        else if (pageCount == 5){
+                            if (pages[4] == true){
+                                document.querySelector('#Page1_01').setAttribute('src', 'assets/logbook/Page5Shown.jpg');
+                            }
+                            else if (pages[4] == false){
+                                document.querySelector('#Page1_01').setAttribute('src', 'assets/logbook/Page5Hidden.jpg');
+                            }                        
+                        }
+                    }
+            });
+
+        
+
+    
+    </script>
+
+
+
+
+</html>
