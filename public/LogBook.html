@@ -23,6 +23,20 @@
                 width:720;
                 position:absolute; top:0; left:0;
             }
+            .hint{
+                height:49;
+                width:49;
+                position:absolute;
+                top: 2px;
+                left: 966px;
+            }
+            .hintBox{
+                height:420;
+                width:172;
+                position:absolute;
+                top: 75px;
+                left: 720px;
+            }
         </style>
         
 
@@ -33,14 +47,18 @@
             <img id='Page1_01'  scale='0.5 0.5 0.5' src='assets/logbook/page1hidden.jpg'>
         </div>
         
-
         <div class='translate1'>
             <img id='left' scale='1 1 1' src='assets/logbook/leftArrow.png'>
         </div>
         <div class='translate2'>
             <img id='right' scale='1 1 1' src='assets/logbook/rightArrow.png'>
         </div>
-        
+        <div class='hint'>
+            <img id='hintButton' scale='1 1 1' src='assets/logbook/Hint.png'>
+        </div>
+        <div class='hintBox'>
+            <img id='hintText' scale='1 1 1' src='assets/logbook/HintNone.png'>
+        </div>
         
 
     </a-scene>
@@ -49,6 +67,7 @@
         var pageCount = 1;
         var previous;
         var pages = [false, false, false, false, false];
+        var hintHidden = true;
 
         //receive the animals that are found and update the pages in the book
         socket.on('SendAnimalArray', function(animals) {
@@ -82,6 +101,8 @@
 
         //check if the player is clicking on one of the arrows and change page count if they are
         document.getElementById("left").addEventListener("click", function(){
+
+
                 console.log("left");
                     if (pageCount >= 2){
                         pageCount -= 1;
@@ -128,6 +149,7 @@
                                 document.querySelector('#Page1_01').setAttribute('src', 'assets/logbook/Page5Hidden.jpg');
                             }                        
                         }
+                        document.querySelector('#hintText').setAttribute('src', 'assets/logbook/hintNone.png');
                     }
 
             });
@@ -178,7 +200,41 @@
                                 document.querySelector('#Page1_01').setAttribute('src', 'assets/logbook/Page5Hidden.jpg');
                             }                        
                         }
+                        document.querySelector('#hintText').setAttribute('src', 'assets/logbook/hintNone.png');
                     }
+            });
+
+            //code for the hint button
+            document.getElementById("hintButton").addEventListener("click", function(){
+                //check which page they are on to display the correct hint
+                if (pageCount == 1){
+                    //page 1    change the picture
+                    document.querySelector('#hintText').setAttribute('src', 'assets/logbook/hint1.png');
+
+                }
+                if (pageCount == 2){
+                    //page 2    change the picture
+                    document.querySelector('#hintText').setAttribute('src', 'assets/logbook/hint2.png');
+
+                }
+                if (pageCount == 3){
+                    //page 3    change the picture
+                    document.querySelector('#hintText').setAttribute('src', 'assets/logbook/hint3.png');
+
+                }
+                if (pageCount == 4){
+                    //page 4    change the picture
+                    document.querySelector('#hintText').setAttribute('src', 'assets/logbook/hint4.png');
+
+                }
+                if (pageCount == 5){
+                    //page 5    change the picture
+                    document.querySelector('#hintText').setAttribute('src', 'assets/logbook/hint5.png');
+
+                }
+            });
+            document.getElementById("hintText").addEventListener("click", function(){
+                document.querySelector('#hintText').setAttribute('src', 'assets/logbook/hintNone.png');
             });
 
         

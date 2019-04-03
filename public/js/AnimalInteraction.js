@@ -27,6 +27,14 @@ frogPos = document.querySelector('#frog1').getAttribute('position');
 frogX1 = frogPos.x - 2;     frogX2 = frogPos.x + 2;
 //get the minimum and maxumum z positions for interaction
 frogZ1 = frogPos.z - 2;     frogZ2 = frogPos.z + 2;
+//--------------------------------      WOODPECKER POSITION        ----------------------------------------------------//
+//get the area around an animal in which the player can interact
+
+woodpeckerPos = document.querySelector('#woodpecker1').getAttribute('position');
+//get the minimum and maxumum x positions for interaction
+woodpeckerX1 = woodpeckerPos.x - 2;     woodpeckerX2 = woodpeckerPos.x + 2;
+//get the minimum and maxumum z positions for interaction
+woodpeckerZ1 = woodpeckerPos.z - 2;     woodpeckerZ2 = woodpeckerPos.z + 2;
 //-------------------------------------      FISH POSITION        -----------------------------------------------------//
 //get the area around an animal in which the player can interact
 
@@ -71,6 +79,11 @@ document.addEventListener('keyup', function(e){
                 animalsFound.splice(0, 1, true);
                 console.log("animalsFound", animalsFound);
                 socket.emit('newArray', animalsFound);
+
+                const Context_AF = this;
+                Context_AF.soundElem = document.querySelector('#Carrot');
+                Context_AF.soundElem.components['sound'].stopSound();
+                Context_AF.soundElem.components['sound'].playSound();
             }
         }
 
@@ -82,6 +95,11 @@ document.addEventListener('keyup', function(e){
                 animalsFound.splice(1, 1, true);
                 console.log("animalsFound", animalsFound);
                 socket.emit('newArray', animalsFound);
+
+                const Context_AF = this;
+                Context_AF.soundElem = document.querySelector('#Yip');
+                Context_AF.soundElem.components['sound'].stopSound();
+                Context_AF.soundElem.components['sound'].playSound();
             }
         }
 
@@ -92,6 +110,29 @@ document.addEventListener('keyup', function(e){
                 animalsFound.splice(2, 1, true);
                 console.log("animalsFound", animalsFound);
                 socket.emit('newArray', animalsFound);
+
+                const Context_AF = this;
+                Context_AF.soundElem = document.querySelector('#Croak');
+                Context_AF.soundElem.components['sound'].stopSound();
+                Context_AF.soundElem.components['sound'].playSound();
+
+            }
+        }
+        console.log(playerPos.x, playerPos.z);
+        console.log(woodpeckerPos.x, woodpeckerPos.z);
+        //check if position matches for the woodpecker
+        if (playerPos.x >= woodpeckerX1 && playerPos.x <= woodpeckerX2){
+            if (playerPos.z >= woodpeckerZ1 && playerPos.z <= woodpeckerZ2){
+                console.log('sending information to the server');
+                animalsFound.splice(3, 1, true);
+                console.log("animalsFound", animalsFound);
+                socket.emit('newArray', animalsFound);
+
+                const Context_AF = this;
+                Context_AF.soundElem = document.querySelector('#Chirp');
+                Context_AF.soundElem.components['sound'].stopSound();
+                Context_AF.soundElem.components['sound'].playSound();
+
             }
         }
 
@@ -102,6 +143,11 @@ document.addEventListener('keyup', function(e){
                 animalsFound.splice(4, 1, true);
                 console.log("animalsFound", animalsFound);
                 socket.emit('newArray', animalsFound);
+
+                const Context_AF = this;
+                Context_AF.soundElem = document.querySelector('#Bubble');
+                Context_AF.soundElem.components['sound'].stopSound();
+                Context_AF.soundElem.components['sound'].playSound();
             }
         }
     }
