@@ -4,6 +4,7 @@ const http      = require('http');
 const server    = http.createServer(app);
 const socketIO  = require('socket.io')(server); //hello I am new
 
+
 //convenience vars
 const LISTEN_PORT = 8080;
 
@@ -16,6 +17,12 @@ app.get('/', function(req, res){
 });
 app.get('/Interaction', function(req, res){
     res.sendFile(__dirname + 'public/Interaction.html');
+});
+app.get('/LogBook', function(req, res){
+    res.sendFile(__dirname + 'public/LogBook.html');
+});
+app.get('/Menu', function(req, res){
+    res.sendFile(__dirname + 'public/Menu.html');
 });
 
 //-----------------------------------------     Variables       ------------------------------------------------------//
@@ -51,6 +58,7 @@ socketIO.on('connection', function(socket) {
         console.log(animalsFound);
         socketIO.sockets.emit('SendAnimalArray', animalsFound);
     });
+
 
 });
 
