@@ -57,6 +57,8 @@ socketIO.on('connection', function(socket) {
         }
         console.log(animalsFound);
         socketIO.sockets.emit('SendAnimalArray', animalsFound);
+
+
     });
 
 

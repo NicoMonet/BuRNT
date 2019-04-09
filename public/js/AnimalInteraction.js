@@ -57,14 +57,22 @@ socket.on('SendAnimalArray', function(Array1) {
         animalsFound.push(Array1[i]);
     }
     
+    var countr = 0;
+    for (var i = 0; i < animalsFound.length; i++){
+        if (animalsFound[i] == true){
+            countr++;
+        }
+        console.log("counter", countr);
+
+        if (countr == 5){
+            console.log("winner");
+            window.location.href = 'Menu.html';
+        }
+    }
+
 });
-//console.log("animalsFound", animalsFound);
 //----------------------------------       INTERACTION CHECK       -----------------------------------------------------//
 //when the player interacts with an animal do something
-
-// document.getElementById("penguin1").addEventListener("click", function(){
-// });
-
 document.addEventListener('keyup', function(e){
 
     //console.log(e.keyCode);
