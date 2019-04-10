@@ -8,7 +8,9 @@
 
     </head>
 
-    <a-scene shadow="type:basic;">
+    <a-scene shadow="type:basic;" 
+    fog="type: linear; color: #AAA" 
+    sound="src: url(./assets/sound/forest.mp3); loop:true; autoplay:true; volume:0.5; maxDistance:10000;" position="0 10 0">
 
         <img crossorigin="anonymous" id="skymap" src="/assets/skyTexture/CloudySky.jpg">
         <img crossorigin="anonymous" id="forestGroundTexture" src="/assets/3D_Modeling/Textures/ForentENV_ALL_texture.png">
@@ -21,12 +23,16 @@
         <a-asset-item id='woodpecker' src='/assets/3D_Modeling/3D_Animals/woodpecker.obj'></a-asset-item>
 
         <!-- SOUND -->
+        <a-entity sound="src: url(./assets/sound/river.ogg); loop:true; autoplay:true; volume:1; maxDistance:10000;" position="2 2 65"></a-entity>
+        <a-entity sound="src: url(./assets/sound/forest-birds-loop.wav); loop:true; autoplay:true; volume:1; maxDistance:1000;" position="0 10 -25"></a-entity>
+        <a-entity sound="src: url(./assets/sound/forest-birds-loop.wav); loop:true; autoplay:true; volume:1; maxDistance:1000;" position="20 10 10"></a-entity>
+
         <a-asset-item crossorigin="anonymous" id="frog_Sound" src="/assets/sound/frog_sound.mp3" response-type="arraybuffer"></a-asset-item>
         <a-entity id="Croak" sound="src:#frog_Sound"></a-entity>
         <a-asset-item crossorigin="anonymous" id="fox_Sound" src="/assets/sound/fox_sound.mp3" response-type="arraybuffer"></a-asset-item>
         <a-entity id="Yip" sound="src:#fox_Sound"></a-entity>
         <a-asset-item crossorigin="anonymous" id="rabbit_Sound" src="/assets/sound/rabbit_sound.mp3" response-type="arraybuffer"></a-asset-item>
-        <a-entity id="Carrot" sound="src:#rabbit_Sound"></a-entity>
+        <a-entity id="Carrot" volume="3000" sound="src:#rabbit_Sound"></a-entity>
         <a-asset-item crossorigin="anonymous" id="fish_Sound" src="/assets/sound/bubbles_sound.mp3" response-type="arraybuffer"></a-asset-item>
         <a-entity id="Bubble" volume="150" sound="src:#fish_Sound"></a-entity>
         <a-asset-item crossorigin="anonymous" id="woodpecker_Sound" src="/assets/sound/woodpecker_sound.mp3" response-type="arraybuffer"></a-asset-item>
