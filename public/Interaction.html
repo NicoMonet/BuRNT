@@ -15,11 +15,8 @@
 
         <a-asset-item crossorigin="anonymous" id="forestALL-obj" src="/assets/3D_Modeling/3D_Environment/Forest_ALL_test_V3.obj"></a-asset-item>
         <a-asset-item id='Hare' src='/assets/3D_Modeling/3D_Animals/Arctic_hare.obj'></a-asset-item>
-        <img id='Htexture' src='assets/3D_Modeling/textures/Arctic_Hare_texture.png'>
         <a-asset-item id='fox' src='/assets/3D_Modeling/3D_Animals/fox.obj'></a-asset-item>
-        <img id='Ftexture' src='assets/3D_Modeling/textures/foxtexturesimple.png'>
         <a-asset-item id='Frog' src='/assets/3D_Modeling/3D_Animals/frog.obj'></a-asset-item>
-        <!-- <img id='Frtexture' src='assets/3D_Modeling/textures/Frog_texture.png'> -->
         <a-asset-item id='fish' src='/assets/3D_Modeling/3D_Animals/fish_model.obj'></a-asset-item>
         <a-asset-item id='woodpecker' src='/assets/3D_Modeling/3D_Animals/woodpecker.obj'></a-asset-item>
 
@@ -40,13 +37,14 @@
             <a-entity   cursor="fuse:true; fuseTimeout:500; rayOrigin: mouse;"></a-entity>
         </a-entity>
 
-        <a-entity id="hare1" position="-40 -2 1" obj-model="obj: #Hare" scale="0.3 0.3 0.3" material="src:#Htexture" rotation="0 10 0" ></a-entity>
-        <a-entity id="fox1" position="-32 -3 -42" obj-model="obj: #fox" scale="0.2 0.2 0.2" material="src:#Ftexture" rotation="0 -100 0" ></a-entity>
-        <a-entity id="frog1" position="20 -1.85 43.8" obj-model="obj: #Frog" scale="0.02 0.02 0.02" rotation="0 180 0" ></a-entity>
-        <a-entity id="fish1" position="50 -4.5 11.7" obj-model="obj: #fish" scale="0.05 0.05 0.05" rotation="45 0 0" ></a-entity>
-        <a-entity id="woodpecker1" position="-25.1 2 35" obj-model="obj: #woodpecker" scale="0.02 0.02 0.02" rotation="33.5 -83 0" ></a-entity>
+        <a-entity id="hare1" position="-40 -2 1" obj-model="obj: #Hare" scale="0.3 0.3 0.3" material="color:white; roughness:1" rotation="0 10 0" ></a-entity>
+        <a-entity id="fox1" position="-32 -3 -42" obj-model="obj: #fox" scale="0.2 0.2 0.2" material="color:rgb(161, 98, 57); roughness:1" rotation="0 -100 0" ></a-entity>
+        <a-entity id="frog1" position="20 -1.85 43.8" obj-model="obj: #Frog" scale="0.02 0.02 0.02" material="color:green; roughness:1" rotation="0 180 0" ></a-entity>
+        <a-entity id="fish1" position="50 -4.5 11.7" obj-model="obj: #fish" scale="0.05 0.05 0.05" material="color:rgb(255, 121, 70); roughness:1" rotation="45 0 0" ></a-entity>
+        <a-entity id="woodpecker1" position="-25.1 2 35" obj-model="obj: #woodpecker" scale="0.02 0.02 0.02" material="color:rgb(229, 0, 0); roughness:1" rotation="33.5 -83 0" ></a-entity>
 
-        <a-entity id="Forest" position="0 -3 0" obj-model="obj: #forestALL-obj" scale="0.09 0.09 0.09" material="src:#forestGroundTexture"></a-entity>
+        <a-entity id="Forest" position="0 -3 0" obj-model="obj: #forestALL-obj" scale="0.09 0.09 0.09" 
+        material="src:#forestGroundTexture; roughness:1;" ></a-entity>
 
 
         <a-entity light="type:directional; castShadow:true; intensity:0.6; shadowBias:-0.000001; shadowMapWidth:1024; shadowMapHeight:1024;" position="-0.5 1 1"></a-entity>
